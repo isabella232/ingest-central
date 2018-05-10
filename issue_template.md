@@ -1,4 +1,5 @@
-<!-- If your issue is about a bug, please (1) add the "bug" label and (2) summarize the expected behavior, actual behavior, and steps to reproduce the bug. -->
+<!-- If your issue is about a bug, please (1) add the "bug" label and (2) summarize the expected behavior, actual behavior, and steps to reproduce the bug. 
+
 1. **[Feature Name] Title**
 
     Please give the bug a title that includes the *feature name followed* by a short description (*title*). Put this as the issue title.
@@ -36,5 +37,17 @@
     Please provide any of the following, if available.
 
     >Screenshots (jpeg)\
-    >Text of any messages
-
+    >Text of any messages -->
+    
+1. **[Feature Name] Title**
+    
+1. **Environment and web browser**
+    
+1. **Steps to reproduce**
+    
+1. **Expected results**
+    
+1. **Actual results**
+    
+1. **Visual proof**
+    
