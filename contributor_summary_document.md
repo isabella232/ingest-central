@@ -32,21 +32,21 @@ All of your metadata passed validation.
 
 1. Where can I download my data?
 
-    Data can be downloaded using the [HCA DCP Data Portal]().
+    > Data can be downloaded using the [HCA DCP Data Portal]().
 
 1. Where can I download my metadata?
 
-    Metadata spreadsheet can be downloaded [here]().
+    > Metadata spreadsheet can be downloaded [here]().
 
 1. How can I share or cite my data?
 
-    **TODO**
+    > **TODO**
 
 1. When will my data be analyzed? Where can I find the analysis results?
 
-    **TODO**
+    > **TODO**
 
 1. What do I do if I see a mistake in my project, want to update my project, or have other questions about my project?
 
-    Email the HCA DCP helpdesk at data-help@humancellatlas.org
+    > Email the HCA DCP helpdesk at data-help@humancellatlas.org
 
