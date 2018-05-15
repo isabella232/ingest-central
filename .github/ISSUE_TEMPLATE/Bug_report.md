@@ -27,17 +27,16 @@ Example:
 
 1. Go to file upload in the UI 
 2. Select the abc.fastq (provided)
-3. Click the upload button 
-4. Wait about 5 second
-5. See error in a red box
+3. Click the upload button and wait about 5 second
+4. See an error in a red box
 
-**Expected behavior**
+**Expected behaviour**
 
 Please explain what you expected to happen.
     
 * I expected to see a success message and for the metadata to pass validation.
 
-**Actual behavior**
+**Actual behaviour**
 
 Please explain what actually happened.
 
