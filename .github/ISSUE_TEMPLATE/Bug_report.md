@@ -1,35 +1,50 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: Create a report to help us fix an issue you experienced
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+**Give the bug a title**
+
+Please give the bug a title that includes the *feature name* followed by a short description (*title*).
+
+* [Login] Not able to login with my account\
+* [Validation] Validation failed for a file that should be valid\
+* [UI] Spelling mistake in upload instructions
+
 
 **To Reproduce**
+
+Please explain as much as you can about what you were doing when the bug was observed (to help us reproduce the error for testing).
+
 Steps to reproduce the behavior:
 1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
 4. See error
 
+Example:
+
+1. Go to file upload in the UI 
+2. Select the abc.fastq (provided)
+3. Click the upload button 
+4. Wait about 5 second
+5. See error in a red box
+
 **Expected behavior**
-A clear and concise description of what you expected to happen.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+Please explain what you expected to happen.
+    
+* I expected to see a success message and for the metadata to pass validation.
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+**Actual behavior**
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+Please explain what actually happened.
 
-**Additional context**
-Add any other context about the problem here.
+* The metadata validation appears to be stuck in a validating state.
+
+**Screenshots or Messages**
+
+If applicable, add screenshots to help explain your problem or the text of any error messages.
+
+
