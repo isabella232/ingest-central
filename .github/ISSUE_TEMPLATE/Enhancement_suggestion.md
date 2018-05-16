@@ -4,7 +4,7 @@ about: Suggest an idea for how existing functionality and be improved
 
 ---
 
-**What problem does does the suggested enhancement solve? Please describe.**
+**What problem does the suggested enhancement solve? Please describe.**
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 
 **What type of enhancement is this?**
