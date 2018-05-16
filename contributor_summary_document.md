@@ -2,12 +2,6 @@
 
 Congratulations! Your project has been successfully submitted to the Human Cell Atlas. Please find below some useful information about your project and what you can expect moving forward. If anything looks incorrect, please contact us (data-help@humancellatlas.org) as soon as possible. Thanks for contributing to the future of science!
 
-## Table of contents
-- [Submission information](#submission-information)
-- [Data summary](#data-summary)
-- [Metadata summary](#metadata-summary)
-- [Post-submission FAQ](#post-submission-faq)
-
 ## Submission information
 
 Your project [*project_title*] was submitted on [*submission_date*] at [*submission_time*]. Your project included [*no. total estimated cells*] cells (estimated) from [*organ*] in [*genus_species*].
