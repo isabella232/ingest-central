@@ -8,8 +8,8 @@ New bugs and enhancements will be reviewed at 09:30 UK time each working day and
 
 ## Integration Test Status
 
-### Development
+### Development Environment
 [![Build Status](https://travis-ci.org/HumanCellAtlas/ingest-integration-tests.svg?branch=dev)](https://travis-ci.org/HumanCellAtlas/ingest-integration-tests)
 
-### Integration
+### Integration Environment
 [![Build Status](https://travis-ci.org/HumanCellAtlas/ingest-integration-tests.svg?branch=integration)](https://travis-ci.org/HumanCellAtlas/ingest-integration-tests)
