@@ -1,7 +1,7 @@
 ---
 name: Enhancement suggestion
 about: Suggest an idea for how existing functionality and be improved
-label: enhancement
+labels: enhancement
 
 ---
 
