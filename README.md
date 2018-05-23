@@ -6,10 +6,16 @@ Ingest Central is the hub repository for reporting bugs and suggestion enhanceme
 
 New bugs and enhancements will be reviewed at 09:30 UK time each working day and prioritised.
 
-## Integration Test Status
+## Test Status
 
-### Development Environment
+### Ingest Integration Test (Development)
 [![Build Status](https://travis-ci.org/HumanCellAtlas/ingest-integration-tests.svg?branch=dev)](https://travis-ci.org/HumanCellAtlas/ingest-integration-tests)
 
-### Integration Environment
+### Ingest Integration Test (Integration)
 [![Build Status](https://travis-ci.org/HumanCellAtlas/ingest-integration-tests.svg?branch=integration)](https://travis-ci.org/HumanCellAtlas/ingest-integration-tests)
+
+### DCP Integration Test (Integration)
+[![Build Status](https://travis-ci.org/HumanCellAtlas/dcp.svg?branch=integration)](https://travis-ci.org/HumanCellAtlas/dcp)
+
+### DCP Integration Test (Staging)
+[![Build Status](https://travis-ci.org/HumanCellAtlas/dcp.svg?branch=staging)](https://travis-ci.org/HumanCellAtlas/dcp)
