@@ -6,7 +6,7 @@ Ingest Central is the hub repository for reporting bugs and suggestion enhanceme
 
 New bugs and enhancements will be reviewed at 09:30 UK time each working day and prioritised.
 
-## Integration Test Status
+## Status of Integration Tests
 
 | Test | Environment | Status |
 | --- | --- | --- |
