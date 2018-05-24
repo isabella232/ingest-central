@@ -6,7 +6,11 @@ Ingest Central is the hub repository for reporting bugs and suggestion enhanceme
 
 New bugs and enhancements will be reviewed at 09:30 UK time each working day and prioritised.
 
-## Test Status
+## Integration Test Status
+
+| Test | Status |
+| --- | --- |
+|Ingest Integration Test (Development) | [![Build Status](https://travis-ci.org/HumanCellAtlas/ingest-integration-tests.svg?branch=dev)](https://travis-ci.org/HumanCellAtlas/ingest-integration-tests) |
 
 ### Ingest Integration Test (Development)
 [![Build Status](https://travis-ci.org/HumanCellAtlas/ingest-integration-tests.svg?branch=dev)](https://travis-ci.org/HumanCellAtlas/ingest-integration-tests)
