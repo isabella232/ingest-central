@@ -23,3 +23,4 @@ New bugs and enhancements will be reviewed at 09:30 UK time each working day and
 |[Ingest Validator](https://github.com/HumanCellAtlas/ingest-validator/)|[![Build Status](https://travis-ci.org/HumanCellAtlas/ingest-validator.svg?branch=master)](https://travis-ci.org/HumanCellAtlas/ingest-validator)|||
 |[Ingest Core](https://github.com/HumanCellAtlas/ingest-core)|[![Build Status](https://travis-ci.org/HumanCellAtlas/ingest-core.svg?branch=master)](https://travis-ci.org/HumanCellAtlas/ingest-core)|||
 |[Ingest State Tracking](https://github.com/HumanCellAtlas/ingest-state-tracking)||||
+|[Ingest Broker](https://github.com/HumanCellAtlas/ingest-broker)|||||
