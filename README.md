@@ -16,6 +16,7 @@ New bugs and enhancements will be reviewed at 09:30 UK time each working day and
 |DCP Ingegration Test|Staging| [![Build Status](https://travis-ci.org/HumanCellAtlas/dcp.svg?branch=staging)](https://travis-ci.org/HumanCellAtlas/dcp) |
 
 ## Status of Components
+
 | Component | Build Status | Maintainability | Test Coverage | Image or Distribution Status  |
 | --- | --- | --- |
 |Ingest Core|[![Build Status](https://travis-ci.org/HumanCellAtlas/ingest-core.svg?branch=master)](https://travis-ci.org/HumanCellAtlas/ingest-core)|||||
