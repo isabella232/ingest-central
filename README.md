@@ -8,9 +8,9 @@ New bugs and enhancements will be reviewed at 09:30 UK time each working day and
 
 ## Integration Test Status
 
-| Test | Status |
-| --- | --- |
-|Ingest Integration Test (Development) | [![Build Status](https://travis-ci.org/HumanCellAtlas/ingest-integration-tests.svg?branch=dev)](https://travis-ci.org/HumanCellAtlas/ingest-integration-tests) |
-|Ingest Integration Test (Integration) | [![Build Status](https://travis-ci.org/HumanCellAtlas/ingest-integration-tests.svg?branch=integration)](https://travis-ci.org/HumanCellAtlas/ingest-integration-tests)|
-|DCP Integration Test (Integration) | [![Build Status](https://travis-ci.org/HumanCellAtlas/dcp.svg?branch=integration)](https://travis-ci.org/HumanCellAtlas/dcp)
-|DCP Ingegration Test (Staging) | [![Build Status](https://travis-ci.org/HumanCellAtlas/dcp.svg?branch=staging)](https://travis-ci.org/HumanCellAtlas/dcp) |
+| Test | Environment | Status |
+| --- | --- | --- |
+|Ingest Integration Test|Development| [![Build Status](https://travis-ci.org/HumanCellAtlas/ingest-integration-tests.svg?branch=dev)](https://travis-ci.org/HumanCellAtlas/ingest-integration-tests) |
+|Ingest Integration Test|Integration| [![Build Status](https://travis-ci.org/HumanCellAtlas/ingest-integration-tests.svg?branch=integration)](https://travis-ci.org/HumanCellAtlas/ingest-integration-tests)|
+|DCP Integration Test|Integration| [![Build Status](https://travis-ci.org/HumanCellAtlas/dcp.svg?branch=integration)](https://travis-ci.org/HumanCellAtlas/dcp)
+|DCP Ingegration Test|Staging| [![Build Status](https://travis-ci.org/HumanCellAtlas/dcp.svg?branch=staging)](https://travis-ci.org/HumanCellAtlas/dcp) |
