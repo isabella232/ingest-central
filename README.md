@@ -46,6 +46,6 @@ New bugs and enhancements will be reviewed at 09:30 UK time each working day and
 ## Status of Utilities
 
 | Component | Build Status | Maintainability | Test Coverage |
-| --- | --- | --- |  --- | --- |
+| --- | --- | ---  | --- |
 |[Metadata Schema Publisher](https://github.com/HumanCellAtlas/metadata-schema-publisher)| | | |
 
