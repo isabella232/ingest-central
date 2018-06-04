@@ -35,9 +35,17 @@ New bugs and enhancements will be reviewed at 09:30 UK time each working day and
 |[Ingest State Tracking](https://github.com/HumanCellAtlas/ingest-state-tracking)| | | |[![Docker Repository on Quay](https://quay.io/repository/humancellatlas/ingest-state-tracking/status "Docker Repository on Quay")](https://quay.io/repository/humancellatlas/ingest-state-tracking)|
 |[Ingest Validator](https://github.com/HumanCellAtlas/ingest-validator/)|[![Build Status](https://travis-ci.org/HumanCellAtlas/ingest-validator.svg?branch=master)](https://travis-ci.org/HumanCellAtlas/ingest-validator)|[![Maintainability](https://api.codeclimate.com/v1/badges/acb71b5e1472ff38cbb2/maintainability)](https://codeclimate.com/github/HumanCellAtlas/ingest-validator/maintainability)|[![Test Coverage](https://api.codeclimate.com/v1/badges/acb71b5e1472ff38cbb2/test_coverage)](https://codeclimate.com/github/HumanCellAtlas/ingest-validator/test_coverage)|[![Docker Repository on Quay](https://quay.io/repository/humancellatlas/ingest-validator/status "Docker Repository on Quay")](https://quay.io/repository/humancellatlas/ingest-validator)|
 
+
 ## Status of Distributable Components
 
 | Component | Build Status | Maintainability | Test Coverage | Image |
 | --- | --- | --- |  --- | --- |
 |[Ingest FASTQ Validator]()| | | |[![Docker Repository on Quay](https://quay.io/repository/humancellatlas/ingest-fastq-validator/status "Docker Repository on Quay")](https://quay.io/repository/humancellatlas/ingest-fastq-validator)|
+
+
+## Status of Utilities
+
+| Component | Build Status | Maintainability | Test Coverage |
+| --- | --- | --- |  --- | --- |
+|[Metadata Schema Publisher](https://github.com/HumanCellAtlas/metadata-schema-publisher)| | | |
 
