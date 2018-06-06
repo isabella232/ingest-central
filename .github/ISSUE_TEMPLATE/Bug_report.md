@@ -42,6 +42,10 @@ Please explain what actually happened.
 
 * The metadata validation appears to be stuck in a validating state.
 
+**Impact**
+
+Please explain how this bug impacts you or users to help us prioritise.
+
 **Screenshots or Messages**
 
 If applicable, add screenshots to help explain your problem or the text of any error messages.
