@@ -8,8 +8,8 @@ labels: bug
 
 Please give the bug a title that includes the *feature name* followed by a short description (*title*).
 
-* [Login] Not able to login with my account\
-* [Validation] Validation failed for a file that should be valid\
+* [Login] Not able to login with my account
+* [Validation] Validation failed for a file that should be valid
 * [UI] Spelling mistake in upload instructions
 
 
@@ -44,7 +44,11 @@ Please explain what actually happened.
 
 **Impact**
 
-Please explain how this bug impacts you or users to help us prioritise.
+Please explain how this bug impacts users to help us prioritise.
+
+Example: 
+
+No user will be able to upload a file and so this will block all submissions.
 
 **Screenshots or Messages**
 
