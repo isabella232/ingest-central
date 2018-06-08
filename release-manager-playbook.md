@@ -7,6 +7,18 @@ Please look here is you experience an error and then check the state of the Kube
 
 These are the errors to expect if services are unavailable.
 
+### Ingest Accessioner Unavailable
+
+#### UI
+All metadata will appear "stuck" in draft.
+
+#### Integration Test
+Test will time out with submission in draft.
+```
+0:00:41 WAIT FOR VALIDATION...
+0:00:41 envelope status is Draft
+```
+
 ### Ingest Broker Unavailable
 
 #### UI
@@ -27,16 +39,26 @@ Uploading spreadsheet will fail:
 http.client.RemoteDisconnected: Remote end closed connection without response
 ```
 
-### Ingest Accessioner Unavailable
+### Ingest Core Unavailable
 
 #### UI
-All metadata will appear "stuck" in draft.
+The list of submission on the welcome page will be stuck at:
+
+```
+Loading your submissions...
+```
+Attempting to upload a spreadsheet will fail quickly with the message:
+
+```
+We experienced a problem while uploading your spreadsheet
+
+('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+```
 
 #### Integration Test
-Test will time out with submission in draft.
+Uploading spreadsheet will fail:
 ```
-0:00:41 WAIT FOR VALIDATION...
-0:00:41 envelope status is Draft
+RuntimeError: POST http://ingest.dev.data.humancellatlas.org/api_upload response was 500: b'{"details": "(\'Connection aborted.\', RemoteDisconnected(\'Remote end closed connection without response\',))", "message": "We experienced a problem while uploading your spreadsheet"}'
 ```
 
 ## Suggestions to make our lives easier
