@@ -61,6 +61,16 @@ Uploading spreadsheet will fail:
 RuntimeError: POST http://ingest.dev.data.humancellatlas.org/api_upload response was 500: b'{"details": "(\'Connection aborted.\', RemoteDisconnected(\'Remote end closed connection without response\',))", "message": "We experienced a problem while uploading your spreadsheet"}'
 ```
 
+### Ingest Exporter Unavailable
+
+#### UI
+
+TBD
+
+#### Integration Test
+
+TBD
+
 ### Ingest Ontology Unavailable
 
 #### UI
