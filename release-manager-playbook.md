@@ -61,6 +61,27 @@ Uploading spreadsheet will fail:
 RuntimeError: POST http://ingest.dev.data.humancellatlas.org/api_upload response was 500: b'{"details": "(\'Connection aborted.\', RemoteDisconnected(\'Remote end closed connection without response\',))", "message": "We experienced a problem while uploading your spreadsheet"}'
 ```
 
+### Ingest Ontology Unavailable
+
+#### UI
+No symptoms.
+
+#### Integration Test
+No symptoms.
+
+### Ingest Staging Manager
+
+#### UI
+'Upload Area Location' in UI remains blank
+
+#### Integration Test
+Test will time out with:
+```
+0:00:00 CREATING SUBMISSION with Q4DemoSS2Metadata_v5_plainHeaders_new.xlsx...
+0:00:02  submission ID is 5b1a845684eb570008dca3e0
+0:00:02 WAITING FOR STAGING AREA...
+```
+
 ## Suggestions to make our lives easier
 - It is difficult to track which issues have been resolved in which environments. Using ZenHub to track which features have made each environment.
 - Centralise configuration with parameterisation [see issue #5](https://app.zenhub.com/workspace/o/humancellatlas/ingest-central/issues/5).
