@@ -10,7 +10,7 @@ These are the errors to expect if services are unavailable.
 ### Ingest Accessioner Unavailable
 
 #### UI
-All metadata will appear "stuck" in draft.
+The submission and all metadata will appear "stuck" in draft.
 
 #### Integration Test
 Test will time out with submission in draft.
@@ -75,11 +75,25 @@ No symptoms.
 'Upload Area Location' in UI remains blank
 
 #### Integration Test
-Test will time out with:
+Test will fail when waiting for staging area:
 ```
 0:00:00 CREATING SUBMISSION with Q4DemoSS2Metadata_v5_plainHeaders_new.xlsx...
 0:00:02  submission ID is 5b1a845684eb570008dca3e0
 0:00:02 WAITING FOR STAGING AREA...
+...
+RuntimeError: Function _get_upload_area_credentials did not return a non-None value within 60 seconds
+```
+
+### Ingest State Tracking
+
+#### UI
+The submission will appear "stuck" in Pending. Metadata may be a mixture of valid or draft.
+
+#### Integration Test
+The test will time out waiting for the submission to come out of Pending
+```
+0:02:40 envelope status is Pending
+0:02:40 .
 ```
 
 ## Suggestions to make our lives easier
