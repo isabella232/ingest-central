@@ -2,9 +2,22 @@
 
 Pointers for the release manager
 
-## Errors to expect if services are unavailable
+## Debugging Failure 
+Please look here is you experience an error and then check the state of the Kubernetes cluster.
 
-### Ingest Broker
+These are the errors to expect if services are unavailable.
+
+### Ingest Broker Unavailable
+
+#### UI
+Uploading a spreadsheet will take over 30 seconds and fail with the message:
+```
+An error occurred in uploading spreadsheet
+
+HttpErrorResponse: Http failure response for (unknown url): 0 Unknown Error
+```
+
+#### Integration Test
 Uploading spreadsheet will fail:
 ```
 0:00:00 CREATING SUBMISSION with Q4DemoSS2Metadata_v5_plainHeaders_new.xlsx...
@@ -12,6 +25,18 @@ Uploading spreadsheet will fail:
 ...
 
 http.client.RemoteDisconnected: Remote end closed connection without response
+```
+
+### Ingest Accessioner Unavailable
+
+#### UI
+All metadata will appear "stuck" in draft.
+
+#### Integration Test
+Test will time out with submission in draft.
+```
+0:00:41 WAIT FOR VALIDATION...
+0:00:41 envelope status is Draft
 ```
 
 ## Suggestions to make our lives easier
