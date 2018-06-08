@@ -7,6 +7,10 @@ Please look here is you experience an error and then check the state of the Kube
 
 These are the errors to expect if services are unavailable.
 
+Below is a flowchart that helps debug errors.
+
+![Debig Flowchart](debug-flowchart.png)
+
 ### Ingest Accessioner Unavailable
 
 #### UI
