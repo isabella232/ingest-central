@@ -69,7 +69,7 @@ No symptoms.
 #### Integration Test
 No symptoms.
 
-### Ingest Staging Manager
+### Ingest Staging Manager Unavailable
 
 #### UI
 Submission will remain in draft. 'Upload Area Location' in UI remains blank
@@ -84,7 +84,7 @@ Test will fail when waiting for staging area:
 RuntimeError: Function _get_upload_area_credentials did not return a non-None value within 60 seconds
 ```
 
-### Ingest State Tracking
+### Ingest State Tracking Unavailable
 
 #### UI
 The submission will appear "stuck" in Pending. Metadata will continue to move from draft into valid or invalid.
@@ -96,7 +96,7 @@ The test will time out waiting for the submission to come out of Pending
 0:02:40 .
 ```
 
-### Ingest Validator
+### Ingest Validator Unavailable
 
 #### UI
 The submission will appear "stuck" in Pending. Metadata will remain 'stuck' in Draft.
