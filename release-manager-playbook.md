@@ -1,6 +1,18 @@
 # Release Manager Playbook
 
-Pointer for the release manager
+Pointers for the release manager
+
+## Errors to expect if services are unavailable
+
+### Ingest Broker
+Uploading spreadsheet will fail:
+```
+0:00:00 CREATING SUBMISSION with Q4DemoSS2Metadata_v5_plainHeaders_new.xlsx...
+
+...
+
+http.client.RemoteDisconnected: Remote end closed connection without response
+```
 
 ## Suggestions to make our lives easier
 - It is difficult to track which issues have been resolved in which environments. Using ZenHub to track which features have made each environment.
