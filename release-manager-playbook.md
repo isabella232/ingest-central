@@ -2,6 +2,18 @@
 
 Pointers for the release manager
 
+## Emergency Shutdown (Red Button)
+In the case that ingest needs to shut down immediately scale all pods for deployments in the environment to 0.
+
+This procedure can also be used as a reset if the cluster is overloaded and pods are failing on mass. 
+
+```
+kubectl scale --replicas=0 deployments --all
+```
+To restore reapply the deployments and allow pods to scale to the previous level.
+```
+kubectl apply -f ./deployments/
+```
 ## Debugging Failure 
 Please look here is you experience an error and then check the state of the Kubernetes cluster.
 
