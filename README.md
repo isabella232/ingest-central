@@ -16,7 +16,7 @@ New bugs and enhancements will be reviewed at 09:30 UK time each working day and
 |DCP Integration Test|Staging| [![Build Status](https://travis-ci.org/HumanCellAtlas/dcp.svg?branch=staging)](https://travis-ci.org/HumanCellAtlas/dcp) |
 
 ## Debugging Failures
-For help debugging failures in ingest please see the [Release Manager Playbook](release-manager-playbook.md).
+For help debugging failures in ingest please see the [Release Manager Runbook](release-manager-runbook.md).
 
 ## Status of Libraries
 
