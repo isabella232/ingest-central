@@ -1,4 +1,4 @@
-# Release Manager Playbook
+# Release Manager Runbook
 
 Pointers for the release manager
 
