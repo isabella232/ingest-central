@@ -14,6 +14,8 @@ To restore reapply the deployments and allow pods to scale to the previous level
 ```
 kubectl apply -f ./deployments/
 ```
+*WARNING* - Avoid scaling down the stateful sets as this should not be necessary. If you do also scale down deployments and make sure the statefulsets are restored and fully running before restoring the deployments.
+
 ## Debugging Failure 
 Please look here is you experience an error and then check the state of the Kubernetes cluster.
 
