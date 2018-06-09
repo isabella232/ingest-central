@@ -14,7 +14,7 @@ To restore reapply the deployments and allow pods to scale to the previous level
 ```
 kubectl apply -f ./deployments/
 ```
-*WARNING* - Avoid scaling down the stateful sets as this should not be necessary. If you do also scale down deployments and make sure the statefulsets are restored and fully running before restoring the deployments.
+*WARNING* - Avoid scaling down the stateful sets as this should not be necessary. If you do scale down the statefulsets also scale down deployments and make sure the statefulsets are restored and fully running before restoring the deployments.
 
 ## Debugging Failure 
 Please look here is you experience an error and then check the state of the Kubernetes cluster.
@@ -136,7 +136,7 @@ The test will time out waiting for the submission to come out of Pending
 0:02:40 .
 ```
 
-## Suggestions to make our lives easier
+## Suggestions to make the Release Manager role easier
 - It is difficult to track which issues have been resolved in which environments. Using ZenHub to track which features have made each environment.
 - Centralise configuration with parameterisation [see issue #5](https://app.zenhub.com/workspace/o/humancellatlas/ingest-central/issues/5).
 - Consider tagging the master in quay.io with integration instead of building a new container. 
