@@ -25,6 +25,9 @@ ingest-broker-69b4447778-t7w88            0/1       Unknown             0       
 ```
 This appears to be a [known bug](https://github.com/kubernetes/kubernetes/issues/43279) put down to the Docker daemon on a node failing with the suggested solution to be to restart all nodes. The cause if suggested to be too many pods restarting at one time leading to a node running out of resources.
 
+### Solution
+Stop the failing node or if that cannot be determined all nodes in the AWS EC2 console. The autoscaling group will then create new nodes. It will take approximately 10 minutes for the cluster to become ready and pods to be created.
+
 ## Debugging Failure 
 Please look here is you experience an error and then check the state of the Kubernetes cluster.
 
