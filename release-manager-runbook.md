@@ -23,7 +23,7 @@ kubectl get pods -o wide | grep Unknown
 ingest-accessioner-5b898964d7-qlflf       0/1       Unknown             2          22h       100.96.4.5     ip-172-20-110-97.ec2.internal
 ingest-broker-69b4447778-t7w88            0/1       Unknown             0          22h       <none>         ip-172-20-110-97.ec2.internal
 ```
-This appears to be a [known bug](https://github.com/kubernetes/kubernetes/issues/43279) put down to the Docker daemon on a node failing with the suggested solution to be to restart all nodes. The cause if suggested to be too many pods restarting at one time leading to a node running out of resources.
+This appears to be a [known bug](https://github.com/kubernetes/kubernetes/issues/43279) put down to the Docker daemon on a node failing with the suggested solution to be to restart all nodes. The cause is suggested to be too many pods restarting at one time leading to a node running out of resources.
 
 ### Solution
 Stop the failing node or if that cannot be determined all nodes in the AWS EC2 console. The autoscaling group will then create new nodes. It will take approximately 10 minutes for the cluster to become ready and pods to be created.
