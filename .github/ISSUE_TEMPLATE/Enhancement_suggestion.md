@@ -5,7 +5,7 @@ labels: enhancement
 
 ---
 
-**Please don't submit enhancement here without asking the ingest service first**
+**Please don't submit enhancement here without telling the ingest service first**
 
 *What problem does the suggested enhancement solve? Please describe.*
 
