@@ -5,7 +5,7 @@ labels: enhancement
 
 ---
 
-**Please don't submit an enhancement request without telling the ingest service first. If the enhancement doesn't relate to the current plan phase (GA, etc.) we will probably ask you to keep it back until nearer the phase start**
+**If the enhancement doesn't relate to the current plan phase (GA, etc.) please make ingest aware before submitting a suggestion**
 
 *What problem does the suggested enhancement solve? Please describe.*
 
