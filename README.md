@@ -2,7 +2,7 @@
 Ingest Central is the hub repository for reporting bugs and suggestion enhancements to the HCA DCP Ingest Service.
 
 * Please submit bugs as a [Bug Report](https://github.com/HumanCellAtlas/ingest-central/issues/new?template=Bug_report.md)
-* Please add suggestions as an [Enhancement Suggestion]. If they do not relate to tasks in the current phase (GA, etc.) then please ask ingest first before adding. (https://github.com/HumanCellAtlas/ingest-central/issues/new?template=Enhancement_suggestion.md)
+* Please add suggestions as an [Enhancement Suggestion](https://github.com/HumanCellAtlas/ingest-central/issues/new?template=Enhancement_suggestion.md). If they do not relate to tasks in the current phase (GA, etc.) then please ask ingest first before adding.
 
 New issues will be reviewed as they come in.
 
