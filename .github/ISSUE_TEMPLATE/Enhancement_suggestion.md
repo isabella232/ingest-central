@@ -5,7 +5,7 @@ labels: enhancement
 
 ---
 
-**If the enhancement doesn't relate to the current plan phase (GA, etc.) please make ingest aware before submitting a suggestion**
+**Please make ingest aware via Slack before submitting a suggestion**
 
 1. What problem does the suggested enhancement solve? Please describe.
 
