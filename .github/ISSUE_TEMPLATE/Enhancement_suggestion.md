@@ -5,7 +5,7 @@ labels: enhancement
 
 ---
 
-**Please make ingest aware via Slack before submitting a suggestion**
+**Please discuss with a member of the ingest development team before submitting a suggestion**
 
 1. What problem does the suggested enhancement solve? Please describe.
 
