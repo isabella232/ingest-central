@@ -10,8 +10,9 @@ New issues will be reviewed as they come in.
 
 | Test | Environment | Status |
 | --- | --- | --- |
-|Ingest Integration Test|Development| [![Build Status](https://travis-ci.org/HumanCellAtlas/ingest-integration-tests.svg?branch=dev)](https://travis-ci.org/HumanCellAtlas/ingest-integration-tests) |
-|Ingest Integration Test|Integration| [![Build Status](https://travis-ci.org/HumanCellAtlas/ingest-integration-tests.svg?branch=integration)](https://travis-ci.org/HumanCellAtlas/ingest-integration-tests)|
+|Ingest Integration Test|Development| [![pipeline status](https://allspark.dev.data.humancellatlas.org/aaclan-ebi/ingest-integration-tests/badges/dev/pipeline.svg)](https://allspark.dev.data.humancellatlas.org/aaclan-ebi/ingest-integration-tests/commits/dev) |
+|Ingest Integration Test|Integration| [![pipeline status](https://allspark.dev.data.humancellatlas.org/aaclan-ebi/ingest-integration-tests/badges/integration/pipeline.svg)](https://allspark.dev.data.humancellatlas.org/aaclan-ebi/ingest-integration-tests/commits/integration)|
+|Ingest Integration Test|Staging| [![pipeline status](https://allspark.dev.data.humancellatlas.org/aaclan-ebi/ingest-integration-tests/badges/staging/pipeline.svg)](https://allspark.dev.data.humancellatlas.org/aaclan-ebi/ingest-integration-tests/commits/staging)|
 |DCP Integration Test|Integration| [![Build Status](https://travis-ci.org/HumanCellAtlas/dcp.svg?branch=integration)](https://travis-ci.org/HumanCellAtlas/dcp)
 |DCP Integration Test|Staging| [![Build Status](https://travis-ci.org/HumanCellAtlas/dcp.svg?branch=staging)](https://travis-ci.org/HumanCellAtlas/dcp) |
 
