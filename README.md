@@ -13,7 +13,7 @@ New issues will be reviewed as they come in.
 |Ingest Integration Test|Development|[![pipeline status](https://allspark.dev.data.humancellatlas.org/HumanCellAtlas/ingest-integration-tests/badges/dev/pipeline.svg)](https://allspark.dev.data.humancellatlas.org/HumanCellAtlas/ingest-integration-tests/commits/dev)|
 |Ingest Integration Test|Integration|[![pipeline status](https://allspark.dev.data.humancellatlas.org/HumanCellAtlas/ingest-integration-tests/badges/integration/pipeline.svg)](https://allspark.dev.data.humancellatlas.org/HumanCellAtlas/ingest-integration-tests/commits/integration)|
 |Ingest Integration Test|Staging|[![pipeline status](https://allspark.dev.data.humancellatlas.org/HumanCellAtlas/ingest-integration-tests/badges/staging/pipeline.svg)](https://allspark.dev.data.humancellatlas.org/HumanCellAtlas/ingest-integration-tests/commits/staging)|
-|DCP Integration Test|Integration|[![pipeline status](https://allspark.dev.data.humancellatlas.org/HumanCellAtlas/dcp/badges/integratin/pipeline.svg)](https://allspark.dev.data.humancellatlas.org/HumanCellAtlas/dcp/commits/integration)
+|DCP Integration Test|Integration|[![pipeline status](https://allspark.dev.data.humancellatlas.org/HumanCellAtlas/dcp/badges/integration/pipeline.svg)](https://allspark.dev.data.humancellatlas.org/HumanCellAtlas/dcp/commits/integration)
 |DCP Integration Test|Staging|[![pipeline status](https://allspark.dev.data.humancellatlas.org/HumanCellAtlas/dcp/badges/staging/pipeline.svg)](https://allspark.dev.data.humancellatlas.org/HumanCellAtlas/dcp/commits/staging)|
 
 ## Debugging Failures
