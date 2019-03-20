@@ -53,3 +53,5 @@ For help debugging failures in ingest please see the [Release Manager Runbook](r
 | --- | --- | ---  | --- |
 |[Metadata Schema Publisher](https://github.com/HumanCellAtlas/metadata-schema-publisher)|[![Build Status](https://travis-ci.org/HumanCellAtlas/metadata-schema-publisher.svg?branch=master)](https://travis-ci.org/HumanCellAtlas/metadata-schema-publisher)|[![Maintainability](https://api.codeclimate.com/v1/badges/56a3e119b0b0507bb06d/maintainability)](https://codeclimate.com/github/HumanCellAtlas/metadata-schema-publisher/maintainability) |[![Test Coverage](https://api.codeclimate.com/v1/badges/56a3e119b0b0507bb06d/test_coverage)](https://codeclimate.com/github/HumanCellAtlas/metadata-schema-publisher/test_coverage) |
 
+## Documentation
+Procedures for operating and maintaining ingest are [in the wiki](https://github.com/HumanCellAtlas/ingest-central/wiki).
