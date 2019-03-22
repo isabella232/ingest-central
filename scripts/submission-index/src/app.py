@@ -20,7 +20,7 @@ class BundleIndexer:
 
         bundle_uuids_chunked = list(self.split(bundle_uuids, self.num_threads))
         enumerated_chunks = list(enumerate(bundle_uuids_chunked))
-        reindex_results = self.thread_pool.map(lambda enumerated_chunk: BundleIndexer.reindex(enumerated_chunks, Util(dss_api_url)), enumerated_chunks)
+        reindex_results = self.thread_pool.map(lambda enumerated_chunk: BundleIndexer.reindex(enumerated_chunk, Util(dss_api_url)), enumerated_chunks)
         combined_results = BundleIndexer.reduce_results(reindex_results)
         with open('reindex_results.json', 'w') as outfile:
             json.dump(combined_results, outfile)
