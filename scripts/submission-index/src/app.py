@@ -70,7 +70,7 @@ class BundleIndexer:
     @staticmethod
     def bundle_manifests_for_submission(submission_url):
         submission = requests.get(submission_url).json()
-        manifests_link = submission["_links"]["bundleManifests"]
+        manifests_link = submission["_links"]["bundleManifests"]["href"]
         yield from BundleIndexer.get_all(manifests_link, "bundleManifests")
 
     @staticmethod
@@ -110,7 +110,7 @@ class Util:
         return indexed_bundle
 
     def index_bundle(self, bundle_uuid):
-        bundle = self.dss_client.get_bundle(bundle_uuid)
+        bundle = self.dss_client.get_bundle(uuid=bundle_uuid, replica="aws")
         old_bundle_version = bundle["version"]
 
         bundle_files = bundle["files"]
