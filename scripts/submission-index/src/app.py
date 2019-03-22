@@ -111,7 +111,7 @@ class Util:
 
     def index_bundle(self, bundle_uuid):
         bundle = self.dss_client.get_bundle(uuid=bundle_uuid, replica="aws")
-        old_bundle_version = bundle["version"]
+        old_bundle_version = bundle["bundle"]["version"]
 
         bundle_files = bundle["files"]
         indexed_bundle_files = list(map(lambda bundle_file: Util.set_file_indexed(bundle_file), bundle_files))
