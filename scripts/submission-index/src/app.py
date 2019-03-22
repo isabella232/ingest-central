@@ -5,6 +5,8 @@ import datetime
 import json
 import multiprocessing.dummy
 import logging
+import time
+import os
 from functools import reduce
 
 LOGGER = logging.getLogger(__name__)
@@ -18,16 +20,22 @@ class BundleIndexer:
         bundle_uuids = list(BundleIndexer.bundle_uuids_for_submission(submission_url))
         LOGGER.info(f'Found {len(bundle_uuids)} bundles in submission {submission_url}')
 
+        start = time.time()
         bundle_uuids_chunked = list(self.split(bundle_uuids, self.num_threads))
         enumerated_chunks = list(enumerate(bundle_uuids_chunked))
-        reindex_results = self.thread_pool.map(lambda enumerated_chunk: BundleIndexer.reindex(enumerated_chunk, Util(dss_api_url)), enumerated_chunks)
-        combined_results = BundleIndexer.reduce_results(reindex_results)
-        with open('reindex_results.json', 'w') as outfile:
+        now = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+        results_dirname = f'results_{now}'
+        os.mkdir(results_dirname)
+        reindex_results = self.thread_pool.map(lambda enumerated_chunk: BundleIndexer.reindex(enumerated_chunk, results_dirname, Util(dss_api_url)), enumerated_chunks)
+        end = time.time()
+        print("Time taken: " + str(end - start))
+        combined_results = BundleIndexer.reduce_results(reindex_results, results_dirname)
+        with open(f'{results_dirname}/reindex_results.json', 'w') as outfile:
             json.dump(combined_results, outfile)
         return 0
 
     @staticmethod
-    def reduce_results(reindex_results):
+    def reduce_results(reindex_results, results_dirname):
         def log_line_to_dict(line):
             split_line = line.split(" ")
             bundle_uuid = split_line[0]
@@ -40,7 +48,7 @@ class BundleIndexer:
             }
 
         def fn(acc_results, results_filename):
-            log_lines = [line.rstrip('\n') for line in open(results_filename)]
+            log_lines = [line.rstrip('\n') for line in open(f'{results_dirname}/{results_filename}')]
             parsed_log_lines = map(lambda log_line: log_line_to_dict(log_line), log_lines)
             acc_results["results"].extend(parsed_log_lines)
             return acc_results
@@ -48,14 +56,15 @@ class BundleIndexer:
         return reduce(fn, reindex_results, {"results": []})
 
     @staticmethod
-    def reindex(enumerated_chunk, utils: 'Utils'):
+    def reindex(enumerated_chunk, results_dirname, utils: 'Utils'):
         chunk_index = enumerated_chunk[0]
         bundle_uuids_chunk = enumerated_chunk[1]
-        return BundleIndexer._reindex(chunk_index, bundle_uuids_chunk, utils)
+        return BundleIndexer._reindex(chunk_index, bundle_uuids_chunk, results_dirname, utils)
 
     @staticmethod
-    def _reindex(chunk_index, bundle_uuids_chunk, utils: 'Util'):
-        indexed_bundles_logs = utils.index_bundles(bundle_uuids_chunk, chunk_index)
+    def _reindex(chunk_index, bundle_uuids_chunk, results_dirname, utils: 'Util'):
+        indexed_bundles_logs = utils.index_bundles(bundle_uuids_chunk, chunk_index, results_dirname)
+        return indexed_bundles_logs
 
     @staticmethod
     def split(list_to_split, num_chunks):
@@ -93,18 +102,18 @@ class Util:
         self.dss_client = hca.dss.DSSClient(swagger_url=f'{dss_api_url}/v1/swagger.json')
         self.dss_client.host = dss_api_url + "/v1"
 
-    def index_bundles(self, bundle_uuids, chunk_index):
+    def index_bundles(self, bundle_uuids, chunk_index, results_dirname):
         log_filename = f'indexed_bundles_log_{str(chunk_index)}.txt'
         for bundle_uuid in bundle_uuids:
-            self.index_bundle_and_log(bundle_uuid, log_filename)
+            self.index_bundle_and_log(bundle_uuid, results_dirname, log_filename)
         return log_filename
 
-    def index_bundle_and_log(self, bundle_uuid, log_filename):
+    def index_bundle_and_log(self, bundle_uuid, results_dirname, log_filename):
         indexed_bundle = self.index_bundle(bundle_uuid)
         old_bundle_version = indexed_bundle["old_bundle_version"]
         new_bundle_version = indexed_bundle["new_bundle_version"]
 
-        with open(log_filename, 'a') as file:
+        with open(f'{results_dirname}/{log_filename}', 'a') as file:
             file.write(f'{bundle_uuid} {old_bundle_version} {new_bundle_version}\n')
 
         return indexed_bundle
@@ -114,7 +123,7 @@ class Util:
         old_bundle_version = bundle["version"]
 
         bundle_files = bundle["files"]
-        indexed_bundle_files = list(map(lambda bundle_file: Util.set_file_indexed(bundle_file), bundle_files))
+        indexed_bundle_files = list(map(lambda bundle_file: Util.reindex_file(bundle_file), bundle_files))
         new_bundle_version = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H%M%S.%fZ")
         indexed_bundle = self.create_bundle(bundle_uuid, new_bundle_version, indexed_bundle_files)
 
@@ -130,8 +139,12 @@ class Util:
             version=bundle_version,
             replica="aws",
             files=bundle_files,
-            creator_uid=8008
+            creator_uid=0
         )
+
+    @staticmethod
+    def reindex_file(file):
+        return Util.set_file_indexed(Util.remove_checksums(file))
 
     @staticmethod
     def set_file_indexed(file):
@@ -141,6 +154,18 @@ class Util:
             return indexed_file
         else:
             return dict(file)
+
+    @staticmethod
+    def remove_checksums(file):
+        _file = dict(file)
+        del _file["crc32c"]
+        del _file["s3_etag"]
+        del _file["sha1"]
+        del _file["sha256"]
+        del _file["size"]
+        return _file
+
+
 
 
 if __name__ == "__main__":
