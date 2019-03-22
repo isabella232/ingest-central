@@ -70,7 +70,7 @@ class BundleIndexer:
     @staticmethod
     def bundle_manifests_for_submission(submission_url):
         submission = requests.get(submission_url).json()
-        manifests_link = submission["_links"]["href"]
+        manifests_link = submission["_links"]["bundleManifests"]
         yield from BundleIndexer.get_all(manifests_link, "bundleManifests")
 
     @staticmethod
@@ -143,7 +143,7 @@ class Util:
             return dict(file)
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     submission_url = sys.argv[1]
     dss_api_url = sys.argv[2]
     num_threads = int(sys.argv[3])
