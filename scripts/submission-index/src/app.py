@@ -79,7 +79,7 @@ class BundleIndexer:
     @staticmethod
     def bundle_manifests_for_submission(submission_url):
         submission = requests.get(submission_url).json()
-        manifests_link = submission["_links"]["bundleManifests"]["href"]
+        manifests_link = submission["_links"]["bundleManifests"]["href"] + "?page=0&size=500"
         yield from BundleIndexer.get_all(manifests_link, "bundleManifests")
 
     @staticmethod
