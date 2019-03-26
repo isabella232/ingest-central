@@ -99,21 +99,16 @@ class BundleIndexer:
 class Util:
 
     class DSSClientCached:
-        def __init__(self, dss_api_url, num_uses_before_stale):
-            self.uses = 0
-            self.num_uses_before_stale = num_uses_before_stale
+        def __init__(self, dss_api_url):
             self.dss_api_url = dss_api_url
             self.cached_client = hca.dss.DSSClient(swagger_url=f'{dss_api_url}/v1/swagger.json')
             self.cached_client.host = dss_api_url + "/v1"
 
         def get(self):
-            self.uses = self.uses + 1
-            if self.uses >= self.num_uses_before_stale:
-                self.cached_client = self.new_client()
-                self.uses = 0
-                return self.cached_client
-            else:
-                return self.cached_client
+            return self.cached_client
+
+        def refresh_client(self):
+            self.cached_client = self.new_client()
 
         def new_client(self):
             url = self.dss_api_url
@@ -158,14 +153,23 @@ class Util:
         }
 
 
-    def create_bundle(self, bundle_uuid, bundle_version, bundle_files):
-        return self.dss_client_cached.get().put_bundle(
-            uuid=bundle_uuid,
-            version=bundle_version,
-            replica="aws",
-            files=bundle_files,
-            creator_uid=0
-        )
+    def create_bundle(self, bundle_uuid, bundle_version, bundle_files, tries = 0, max_tries=5, prev_exc=None):
+        if tries >= max_tries:
+            raise prev_exc
+        else:
+            try:
+                return self.dss_client_cached.get().put_bundle(
+                    uuid=bundle_uuid,
+                    version=bundle_version,
+                    replica="aws",
+                    files=bundle_files,
+                    creator_uid=0
+                )
+            except Exception as e:
+                self.dss_client_cached.refresh_client()
+                time.sleep(1)
+                return self.create_bundle(bundle_uuid, bundle_version, bundle_files, tries + 1, max_tries, e)
+
 
     @staticmethod
     def requires_indexing(bundle_files):
