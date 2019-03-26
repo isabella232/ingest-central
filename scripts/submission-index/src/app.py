@@ -118,7 +118,7 @@ class Util:
 
     def __init__(self, dss_api_url):
         self.dss_api_url = dss_api_url
-        self.dss_client_cached = Util.DSSClientCached(dss_api_url, 200)
+        self.dss_client_cached = Util.DSSClientCached(dss_api_url)
 
     def index_bundles(self, bundle_uuids, chunk_index, results_dirname):
         log_filename = f'indexed_bundles_log_{str(chunk_index)}.txt'
