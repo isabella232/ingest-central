@@ -98,9 +98,32 @@ class BundleIndexer:
 
 class Util:
 
+    class DSSClientCached:
+        def __init__(self, dss_api_url, num_uses_before_stale):
+            self.uses = 0
+            self.num_uses_before_stale = num_uses_before_stale
+            self.dss_api_url = dss_api_url
+            self.cached_client = hca.dss.DSSClient(swagger_url=f'{dss_api_url}/v1/swagger.json')
+            self.cached_client.host = dss_api_url + "/v1"
+
+        def get(self):
+            self.uses = self.uses + 1
+            if self.uses >= self.num_uses_before_stale:
+                self.cached_client = self.new_client()
+                self.uses = 0
+                return self.cached_client
+            else:
+                return self.cached_client
+
+        def new_client(self):
+            url = self.dss_api_url
+            client = hca.dss.DSSClient(swagger_url=f'{url}/v1/swagger.json')
+            client.host = self.dss_api_url + "/v1"
+            return client
+
     def __init__(self, dss_api_url):
-        self.dss_client = hca.dss.DSSClient(swagger_url=f'{dss_api_url}/v1/swagger.json')
-        self.dss_client.host = dss_api_url + "/v1"
+        self.dss_api_url = dss_api_url
+        self.dss_client_cached = Util.DSSClientCached(dss_api_url, 200)
 
     def index_bundles(self, bundle_uuids, chunk_index, results_dirname):
         log_filename = f'indexed_bundles_log_{str(chunk_index)}.txt'
@@ -119,7 +142,8 @@ class Util:
         return indexed_bundle
 
     def index_bundle(self, bundle_uuid):
-        bundle = self.dss_client.get_bundle(uuid=bundle_uuid, replica="aws")["bundle"]
+        dss_client = self.dss_client_cached.get()
+        bundle = dss_client.get_bundle(uuid=bundle_uuid, replica="aws")["bundle"]
         old_bundle_version = bundle["version"]
 
         bundle_files = bundle["files"]
@@ -133,14 +157,19 @@ class Util:
             "old_bundle_version": old_bundle_version
         }
 
+
     def create_bundle(self, bundle_uuid, bundle_version, bundle_files):
-        return self.dss_client.put_bundle(
+        return self.dss_client_cached.get().put_bundle(
             uuid=bundle_uuid,
             version=bundle_version,
             replica="aws",
             files=bundle_files,
             creator_uid=0
         )
+
+    @staticmethod
+    def requires_indexing(bundle_files):
+        return len(list(filter(lambda bundle_file: not bundle_file["indexed"], bundle_files))) > 0
 
     @staticmethod
     def reindex_file(file):
@@ -164,8 +193,6 @@ class Util:
         del _file["sha256"]
         del _file["size"]
         return _file
-
-
 
 
 if __name__ == "__main__":
