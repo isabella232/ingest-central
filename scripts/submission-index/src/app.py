@@ -172,7 +172,7 @@ class Util:
                       map(lambda bundle_uuid: self.old_bundle_version(bundle_uuid), bundle_uuids),
                       [])
 
-    def old_bundle_versions(self, bundle_uuid):
+    def old_bundle_version(self, bundle_uuid):
         """
         Given a bundle uuid, returns the older versions in a list of tuples (<uuid>, <older-version>)
         :param bundle_uuid:
@@ -184,7 +184,7 @@ class Util:
         results = resp["results"]
         results_sorted_by_timestamp = sorted(results, key=lambda k: k['bundle_fqid'], reverse=True)
         if len(results) > 1:
-            return list(map(lambda result: (bundle_uuid, result["metadata"]["manifest"]["version"]), results_sorted_by_timestamp[1:]))
+            return list(map(lambda result: {"bundle_uuid": bundle_uuid, "version": result["metadata"]["manifest"]["version"]}, results_sorted_by_timestamp[1:]))
         else:
             return []
 
@@ -250,7 +250,6 @@ if __name__ == "__main__":
     num_threads = int(sys.argv[3])
 
     old_fqids = OldBundleCollector(num_threads).run(submission_url, dss_api_url)
-    with open("old_bundle_fqids.json", "rb") as old_fqids_file:
+    with open("old_bundle_fqids.json", "w") as old_fqids_file:
         json.dump({"results": old_fqids}, old_fqids_file)
 
-    sys.exit(result_code)
