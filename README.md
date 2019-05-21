@@ -8,6 +8,10 @@ New issues will be reviewed as they come in.
 
 ## Status of Integration Tests
 
+### View GitLab status
+DCP: https://humancellatlas.github.io/
+Ingest: https://humancellatlas.github.io/projects/ingest-integration-tests/
+
 | Test | Environment | Status |
 | --- | --- | --- |
 |Ingest Integration Test|Development|[![pipeline status](https://allspark.dev.data.humancellatlas.org/HumanCellAtlas/ingest-integration-tests/badges/dev/pipeline.svg)](https://allspark.dev.data.humancellatlas.org/HumanCellAtlas/ingest-integration-tests/commits/dev)|
