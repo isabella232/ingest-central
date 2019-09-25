@@ -45,18 +45,23 @@ For help debugging failures in ingest please see the [Release Manager Runbook](r
 |[Ingest UI](https://github.com/HumanCellAtlas/ingest-ui/)|[![Build Status](https://travis-ci.org/HumanCellAtlas/ingest-ui.svg?branch=master)](https://travis-ci.org/HumanCellAtlas/ingest-ui)|||[![Docker Repository on Quay](https://quay.io/repository/humancellatlas/ingest-ui/status "Docker Repository on Quay")](https://quay.io/repository/humancellatlas/ingest-ui)|
 
 
-## Status of Distributable Components
-
-| Component | Build Status | Maintainability | Test Coverage | Image |
-| --- | --- | --- |  --- | --- |
-|[Ingest FASTQ Validator]()| | | |[![Docker Repository on Quay](https://quay.io/repository/humancellatlas/ingest-fastq-validator/status "Docker Repository on Quay")](https://quay.io/repository/humancellatlas/ingest-fastq-validator)|
-
-
 ## Status of Utilities
 
 | Component | Build Status | Maintainability | Test Coverage |
 | --- | --- | ---  | --- |
+|[Ingest Kube Deployment](https://github.com/HumanCellAtlas/ingest-kube-deployment)| | | |
+|[Ingest Backup](https://github.com/HumanCellAtlas/ingest-backup)| | | |
+|[Ingest Archiver](https://github.com/HumanCellAtlas/ingest-archiver)|[![Build Status](https://travis-ci.org/HumanCellAtlas/ingest-archiver.svg?branch=master)](https://travis-ci.org/HumanCellAtlas/ingest-archiver)|[![Maintainability](https://api.codeclimate.com/v1/badges/8ce423001595db4e6de7/maintainability)](https://codeclimate.com/github/HumanCellAtlas/ingest-archiver/maintainability)|[![Test Coverage](https://codecov.io/gh/HumanCellAtlas/ingest-archiver/branch/master/graph/badge.svg)](https://codecov.io/gh/HumanCellAtlas/ingest-archiver)|
+|[Ingest File Archiver](https://github.com/HumanCellAtlas/ingest-file-archiver)| | | |
 |[Metadata Schema Publisher](https://github.com/HumanCellAtlas/metadata-schema-publisher)|[![Build Status](https://travis-ci.org/HumanCellAtlas/metadata-schema-publisher.svg?branch=master)](https://travis-ci.org/HumanCellAtlas/metadata-schema-publisher)|[![Maintainability](https://api.codeclimate.com/v1/badges/56a3e119b0b0507bb06d/maintainability)](https://codeclimate.com/github/HumanCellAtlas/metadata-schema-publisher/maintainability) |[![Test Coverage](https://api.codeclimate.com/v1/badges/56a3e119b0b0507bb06d/test_coverage)](https://codeclimate.com/github/HumanCellAtlas/metadata-schema-publisher/test_coverage) |
+
+
+## Status of Distributable Components
+
+| Component | Build Status | Maintainability | Test Coverage | Image |
+| --- | --- | --- |  --- | --- |
+|[Ingest FASTQ Validator](https://github.com/HumanCellAtlas/ingest-fastq-validator)| | | |[![Docker Repository on Quay](https://quay.io/repository/humancellatlas/ingest-fastq-validator/status "Docker Repository on Quay")](https://quay.io/repository/humancellatlas/ingest-fastq-validator)|
+
 
 ## Documentation
 Procedures for operating and maintaining ingest are [in the wiki](https://github.com/HumanCellAtlas/ingest-central/wiki).
