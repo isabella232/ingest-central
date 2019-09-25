@@ -50,6 +50,7 @@ For help debugging failures in ingest please see the [Release Manager Runbook](r
 | Component | Build Status | Maintainability | Test Coverage |
 | --- | --- | ---  | --- |
 |[Ingest Kube Deployment](https://github.com/HumanCellAtlas/ingest-kube-deployment)| | | |
+|[Ingest Auth](https://github.com/HumanCellAtlas/ingest-auth)| | | |
 |[Ingest Backup](https://github.com/HumanCellAtlas/ingest-backup)| | | |
 |[Ingest Archiver](https://github.com/HumanCellAtlas/ingest-archiver)|[![Build Status](https://travis-ci.org/HumanCellAtlas/ingest-archiver.svg?branch=master)](https://travis-ci.org/HumanCellAtlas/ingest-archiver)|[![Maintainability](https://api.codeclimate.com/v1/badges/8ce423001595db4e6de7/maintainability)](https://codeclimate.com/github/HumanCellAtlas/ingest-archiver/maintainability)|[![Test Coverage](https://codecov.io/gh/HumanCellAtlas/ingest-archiver/branch/master/graph/badge.svg)](https://codecov.io/gh/HumanCellAtlas/ingest-archiver)|
 |[Ingest File Archiver](https://github.com/HumanCellAtlas/ingest-file-archiver)| | | |
