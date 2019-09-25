@@ -21,7 +21,7 @@ Ingest: https://humancellatlas.github.io/projects/ingest-integration-tests/
 |DCP Integration Test|Staging|[![pipeline status](https://allspark.dev.data.humancellatlas.org/HumanCellAtlas/dcp/badges/staging/pipeline.svg)](https://allspark.dev.data.humancellatlas.org/HumanCellAtlas/dcp/commits/staging)|
 ---> 
 ## Debugging Failures
-For help debugging failures in ingest please see the [Release Manager Runbook](release-manager-runbook.md).
+For help debugging failures in ingest please see the [Release Manager Runbook](https://allspark.dev.data.humancellatlas.org/dcp-ops/docs/wikis/Ingest-Runbook).
 
 ## Status of Libraries
 
